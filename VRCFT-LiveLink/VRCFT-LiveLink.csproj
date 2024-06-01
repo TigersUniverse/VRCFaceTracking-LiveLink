@@ -1,13 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>VRCFT___LiveLink</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x64</Platforms>
     <BaseOutputPath></BaseOutputPath>
 	<AssemblyVersion>0.0.1.0</AssemblyVersion>
+	<LangVersion>10</LangVersion>
+	<TargetFrameworks>netstandard2.1;net481;net7.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,10 +34,35 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net481'">
     <Reference Include="VRCFaceTracking.Core">
-      <HintPath>..\VRCFaceTracking.Core.dll</HintPath>
+      <HintPath>$(VRCFaceTrackingBuild)\net481\VRCFaceTracking.Core.dll</HintPath>
     </Reference>
+    <Reference Include="VRCFaceTracking.SDK">
+      <HintPath>$(VRCFaceTrackingBuild)\net481\VRCFaceTracking.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <Reference Include="VRCFaceTracking.Core">
+      <HintPath>$(VRCFaceTrackingBuild)\netstandard2.1\VRCFaceTracking.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCFaceTracking.SDK">
+      <HintPath>$(VRCFaceTrackingBuild)\netstandard2.1\VRCFaceTracking.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <Reference Include="VRCFaceTracking.Core">
+      <HintPath>$(VRCFaceTrackingBuild)\net7.0\VRCFaceTracking.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCFaceTracking.SDK">
+      <HintPath>$(VRCFaceTrackingBuild)\net7.0\VRCFaceTracking.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="VRCFT-LiveLink.csproj.user" />
   </ItemGroup>
 
 </Project>

@@ -1,23 +1,9 @@
-﻿using System;
-using System.Threading;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.IO;
-using System.Runtime.InteropServices;
-
-using System.Diagnostics;
-
 using VRCFaceTracking;
 using Microsoft.Extensions.Logging;
-using VRCFaceTracking.Core.Types;
 using VRCFaceTracking.Core.Params.Data;
 using VRCFaceTracking.Core.Params.Expressions;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Reflection;
 
 namespace LiveLinkExtTrackingInterface
 {

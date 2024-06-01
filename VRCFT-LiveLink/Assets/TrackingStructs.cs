@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-
-namespace LiveLinkExtTrackingInterface
+﻿namespace LiveLinkExtTrackingInterface
 {
     // Live Link Single-Eye tracking data
     public class LiveLinkTrackingDataEye

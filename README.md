@@ -7,15 +7,17 @@ Note that the tracking will only realistically work *without a headset on your f
 
 You need an IPhone X/XS/XR or newer, 12.9-inch IPad Pro 3rd gen or newer, or 11-inch IPad Pro 1st gen or newer to make use of this module.
 
-- Install [VRCFaceTracking](https://github.com/benaclejames/VRCFaceTracking)
-- Copy the `VRCFT-LiveLink.dll` into your `%AppData%\Roaming\VRCFaceTracking\CustomLibs` folder
-  - **Find the .dll under "Assets" in the [latest release](https://github.com/kusomaigo/VRCFaceTracking-LiveLink/releases/latest)**
-  - Until the module gets approved to show in the module registry, this custom method is how it must be!
+- Install and integrate [VRCFaceTracking](https://github.com/TigersUniverse/VRCFaceTracking) into your application
+  - If you are not a developer, then you probably don't need to do this.
+  - See the integrating application documentation for more information
+- Copy the `VRCFT-LiveLink.dll` into wherever CustomLibs are installed
+  - **Find the .dll under "Assets" in the [latest release](https://github.com/TigersUniverse/VRCFaceTracking-LiveLink/releases/latest)**
+  - If you need the dll for `netstandard2.1` or `net7.0`, then download the zip and find it in the corresponding folder
 - Install the app "[Live Link Face](https://apps.apple.com/us/app/live-link-face/id1495370836)" by Unreal Engine on your Apple device
   - Ensure that your Apple device is connected to the same network as your computer
 - Open Live Link Face on the Apple device, and open settings, then tap the Live Link option at the top
-- Start VRCFaceTracking, then change to the Output page
-- Add your computer's local IP address here, which should have been printed out in the Output page of VRCFaceTracking. There is no way to change the port for now, so leave it as the LiveLink default `11111`
+- Start your application and initialize VRCFaceTracking
+- Add your computer's local IP address here, which should have been printed out in the VRCFaceTracking logs. There is no way to change the port for now, so leave it as the LiveLink default `11111`
 - Return to the main screen and tap the Live button at the top. If it is *green*, the app is streaming data
 - Start VRChat in desktop mode, equip a VRCFT-enabled avatar, and enjoy facial tracking!
 
